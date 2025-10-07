@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudoku6x6.ControladorSudoku">
+   <children>
+      <ImageView fitHeight="698.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imagenes/imagen.png" />
+         </image>
+         <effect>
+            <BoxBlur height="2.0" width="6.0" />
+         </effect>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="-12.0" prefHeight="148.0" prefWidth="390.0" text="SUDOKU" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="90.0" />
+         </font>
+         <effect>
+            <BoxBlur height="0.0" width="9.0" />
+         </effect>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="446.0" layoutY="517.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="195.0" style="-fx-background-color: invisible;" text="Iniciar " textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="42.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="517.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="340.0" style="-fx-background-color: invisible;" text="Instrucciones del juego" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="40.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
 </AnchorPane>
