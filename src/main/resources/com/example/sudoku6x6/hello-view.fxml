@@ -1,16 +1,631 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.sudoku6x6.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imagenes/desktop-wallpaper-aesthetic-anime-night-street-90s-street.jpg" />
+         </image>
+         <effect>
+            <BoxBlur height="6.0" width="0.0" />
+         </effect>
+      </ImageView>
+      <GridPane layoutX="56.0" layoutY="41.0" style="-fx-border-color: black;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="108.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="92.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField prefHeight="56.0" prefWidth="108.0">
+               <effect>
+                  <Lighting>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="56.0" prefWidth="92.0" GridPane.columnIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="45.0" prefWidth="95.0" GridPane.columnIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="75.0" prefWidth="95.0" GridPane.columnIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.429824560880661" green="0.511695921421051" blue="0.7368420958518982" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="67.0" prefWidth="95.0" GridPane.columnIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="55.0" prefWidth="95.0" GridPane.columnIndex="5">
+               <effect>
+                  <Lighting>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="62.0" prefWidth="108.0" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="66.0" prefWidth="108.0" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="79.0" prefWidth="108.0" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="64.0" prefWidth="108.0" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="89.0" prefWidth="108.0" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="48.0" prefWidth="92.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="59.0" prefWidth="92.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="60.0" prefWidth="92.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="55.0" prefWidth="92.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="72.0" prefWidth="92.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="59.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="68.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="68.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="101.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="135.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="46.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="66.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="53.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="54.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="74.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="70.0" prefWidth="95.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="107.0" prefWidth="95.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="53.0" prefWidth="95.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <TextField prefHeight="49.0" prefWidth="95.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="80.0" prefWidth="95.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="73.0" prefWidth="95.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="41.0" prefWidth="95.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="46.0" prefWidth="95.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="71.0" prefWidth="95.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4313725531101227" green="0.5098039507865906" blue="0.7372549176216125" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <TextField prefHeight="71.0" prefWidth="95.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.2078431397676468" blue="0.2078431397676468" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+         </children>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </GridPane>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="286.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="237.0" style="-fx-background-color: null;" text="Generar pista" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="41.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button alignment="CENTER" layoutX="303.0" layoutY="290.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="283.0" style="-fx-background-color: nulll;" text="Reiniciar Tablero" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="40.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button alignment="CENTER" layoutX="326.0" layoutY="381.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="237.0" style="-fx-background-color: null;" text="Validar Tablero" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="30.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="381.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="237.0" style="-fx-background-color: null;" text="Tablero nuevo" textFill="WHITE">
+         <font>
+            <Font name="Pristina" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+   </children>
+</AnchorPane>
