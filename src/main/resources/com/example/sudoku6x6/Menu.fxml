@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudoku6x6.ControladorSudoku">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudoku6x6.ControladorMenu">
    <children>
       <ImageView fitHeight="698.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,7 +26,7 @@
             <BoxBlur height="0.0" width="9.0" />
          </effect>
       </Label>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="446.0" layoutY="517.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="195.0" style="-fx-background-color: invisible;" text="Iniciar " textFill="WHITE">
+      <Button fx:id="IniciarBotonMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="446.0" layoutY="517.0" mnemonicParsing="false" onAction="#ClickIniciar" prefHeight="98.0" prefWidth="195.0" style="-fx-background-color: invisible;" text="Iniciar " textFill="WHITE">
          <font>
             <Font name="Pristina" size="42.0" />
          </font>
@@ -37,7 +37,7 @@
                </color>
             </DropShadow>
          </effect></Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="517.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="340.0" style="-fx-background-color: invisible;" text="Instrucciones del juego" textFill="WHITE">
+      <Button fx:id="InstruccionesBotonMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="517.0" mnemonicParsing="false" onAction="#ClickInstrucciones" prefHeight="98.0" prefWidth="340.0" style="-fx-background-color: invisible;" text="Instrucciones del juego" textFill="WHITE">
          <font>
             <Font name="Pristina" size="40.0" />
          </font>
