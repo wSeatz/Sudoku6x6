@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,7 @@ public class ControladorSudoku {
             if (tableroList.size() == TAMANO * TAMANO) {
                 // Generar el tablero la primera vez que se carga la ventana
                 generarSudokuAleatorio();
+                validacionInstantanea(tableroList);
             } else {
                 // Si esto sucede, revisa que todos los 36 TextField tengan rowIndex/columnIndex
                 System.err.println("Error: Se encontraron " + tableroList.size() + " TextField en lugar de 36. Revisar FXML.");
@@ -95,7 +98,7 @@ public class ControladorSudoku {
             String valorStr = String.valueOf(valores[fila][col]);
 
             // Decide si ocultar o mostrar (esto determina la dificultad)
-            if (rand.nextInt(TAMANO * TAMANO) < celdasParaMostrar) {
+            if ( rand.nextInt(TAMANO * TAMANO) < celdasParaMostrar) {
                 tableroList.get(indice).setText(valorStr);
                 tableroList.get(indice).setEditable(false);
             }
@@ -132,6 +135,20 @@ public class ControladorSudoku {
     @FXML
     public void validarTablero(ActionEvent event) {
         System.out.println("Validando tablero...");
+    }
+    private void validacionInstantanea(List<TextField> campos){
+        for (TextField campo : campos) {
+            campo.textProperty().addListener((observable, oldValue, newValue) -> {
+                if (!newValue.matches("[1-6]?")) {
+                    campo.setText(oldValue);
+                    Alert alerta = new Alert(AlertType.WARNING);
+                    alerta.setTitle("ERROR");
+                    alerta.setHeaderText("Entrada inválida");
+                    alerta.setContentText("Solo se permiten números del 1 al 6.");
+                    alerta.showAndWait();
+                }
+            });
+        }
     }
 
     @FXML
