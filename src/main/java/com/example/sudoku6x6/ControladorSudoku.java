@@ -6,8 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
@@ -21,7 +20,7 @@ public class ControladorSudoku {
 
     private final List<TextField> tableroList = new ArrayList<>();
 
-    private static final int TAMAÑO = 6;
+    private static final int TAMANO = 6;
 
     // ----------------------------------------------------------------------
     // INICIALIZACIÓN
@@ -33,7 +32,7 @@ public class ControladorSudoku {
         Platform.runLater(() -> {
             cargarTableroDesdeGridPane();
 
-            if (tableroList.size() == TAMAÑO * TAMAÑO) {
+            if (tableroList.size() == TAMANO * TAMANO) {
                 // Generar el tablero la primera vez que se carga la ventana
                 generarSudokuAleatorio();
             } else {
@@ -69,7 +68,7 @@ public class ControladorSudoku {
         Random rand = new Random();
 
         // Matriz temporal para la lógica de Sudoku
-        int[][] valores = new int[TAMAÑO][TAMAÑO];
+        int[][] valores = new int[TAMANO][TAMANO];
 
         if (!resolverTablero(valores)) {
             System.err.println("No se pudo generar un tablero Sudoku válido.");
@@ -86,17 +85,17 @@ public class ControladorSudoku {
         }
 
         // Transfiere solo las 'pistas' al tablero visible y las marca como no editables
-        for (int k = 0; k < TAMAÑO * TAMAÑO; k++) {
+        for (int k = 0; k < TAMANO * TAMANO; k++) {
             // Llenamos todas las celdas y luego quitamos la mayoría para crear el desafío.
-            int fila = k / TAMAÑO;
-            int col = k % TAMAÑO;
+            int fila = k / TAMANO;
+            int col = k % TAMANO;
             int indice = k;
 
             // El número está en la matriz 'valores'
             String valorStr = String.valueOf(valores[fila][col]);
 
             // Decide si ocultar o mostrar (esto determina la dificultad)
-            if (rand.nextInt(TAMAÑO * TAMAÑO) < celdasParaMostrar) {
+            if (rand.nextInt(TAMANO * TAMANO) < celdasParaMostrar) {
                 tableroList.get(indice).setText(valorStr);
                 tableroList.get(indice).setEditable(false);
             }
@@ -105,13 +104,13 @@ public class ControladorSudoku {
     }
 
     private boolean resolverTablero(int[][] valores) {
-        for (int fila = 0; fila < TAMAÑO; fila++) {
-            for (int col = 0; col < TAMAÑO; col++) {
+        for (int fila = 0; fila < TAMANO; fila++) {
+            for (int col = 0; col < TAMANO; col++) {
 
                 if (valores[fila][col] == 0) {
 
 
-                    for (int valor = 1; valor <= TAMAÑO; valor++) {
+                    for (int valor = 1; valor <= TAMANO; valor++) {
 
                         if (esValido(valores, fila, col, valor)) {
                             valores[fila][col] = valor;
@@ -142,7 +141,7 @@ public class ControladorSudoku {
 
     private boolean esValido(int[][] valores, int fila, int col, int valor) {
         // 1. Verificar Fila y Columna
-        for (int i = 0; i < TAMAÑO; i++) {
+        for (int i = 0; i < TAMANO; i++) {
             // Verifica la fila actual
             if (valores[fila][i] == valor) return false;
             // Verifica la columna actual
