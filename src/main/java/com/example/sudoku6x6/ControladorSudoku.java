@@ -194,7 +194,47 @@ public class ControladorSudoku {
                 return false;
             }
         }
+        for (Integer num : identificarSubcuadricula(indice)){
+            TextField campo = tableroList.get(num);
+            if ((tfIndice.getText().matches(campo.getText())) & (!tfIndice.getText().matches("")) & (num!=indice)) {
+                Alert alerta = new Alert(AlertType.WARNING);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Entrada inválida");
+                alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma subcuadricula");
+                alerta.showAndWait();
+                String estiloOriginal = campo.getStyle();
+                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                tfIndice.setOnKeyReleased(event -> {
+                    String texto = tfIndice.getText();
+                    if (texto.isEmpty()){
+                        campo.setStyle(estiloOriginal);
+                    }
+                });
+                return false;
+            }
+        }
         return true;
+    }
+    public List<Integer> identificarSubcuadricula(int indice){
+        List <Integer> subcuadricula1 = List.of(0,1,2,6,7,8);
+        List <Integer> subcuadricula2 = List.of(3,4,5,9,10,11);
+        List <Integer> subcuadricula3 = List.of(12,13,14,18,19,20);
+        List <Integer> subcuadricula4 = List.of(15,16,17,21,22,23);
+        List <Integer> subcuadricula5 = List.of(24,25,26,30,31,32);
+        List <Integer> subcuadricula6 = List.of(27,28,29,33,34,35);
+        if (subcuadricula1.contains(indice)){
+            return subcuadricula1;
+        } else if (subcuadricula2.contains(indice)){
+            return subcuadricula2;
+        } else if (subcuadricula3.contains(indice)){
+            return subcuadricula3;
+        } else if (subcuadricula4.contains(indice)){
+            return subcuadricula4;
+        }  else if (subcuadricula5.contains(indice)){
+            return subcuadricula5;
+        }  else if (subcuadricula6.contains(indice)){
+            return subcuadricula6;
+        } else return null;
     }
     @FXML
     public void generarPista(ActionEvent event) {
