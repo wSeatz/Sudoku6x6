@@ -137,20 +137,65 @@ public class ControladorSudoku {
         System.out.println("Validando tablero...");
     }
     private void validacionInstantanea(List<TextField> campos){
-        for (TextField campo : campos) {
-            campo.textProperty().addListener((observable, oldValue, newValue) -> {
+        for (int k = 0; k < TAMANO * TAMANO; k++) {
+            int i= k;
+            campos.get(k).textProperty().addListener((observable, oldValue, newValue) -> {
                 if (!newValue.matches("[1-6]?")) {
-                    campo.setText(oldValue);
+                    campos.get(i).setText(oldValue);
                     Alert alerta = new Alert(AlertType.WARNING);
                     alerta.setTitle("ERROR");
                     alerta.setHeaderText("Entrada inválida");
                     alerta.setContentText("Solo se permiten números del 1 al 6.");
                     alerta.showAndWait();
                 }
+                if (!validarReglas(i)){
+                    System.out.println("ERROR");
+                }
             });
         }
     }
-
+    public boolean validarReglas(int indice) {
+        TextField tfIndice = tableroList.get(indice);
+        for (int c = (indice%6); c < TAMANO * TAMANO; c=(c+6)) {
+            TextField campo = tableroList.get(c);
+         if ((campo.getText().matches(tfIndice.getText())) & (!campo.getText().matches("")) & (c!=indice)) {
+             Alert alerta = new Alert(AlertType.WARNING);
+             alerta.setTitle("ERROR");
+             alerta.setHeaderText("Entrada inválida");
+             alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma columna");
+             alerta.showAndWait();
+             String estiloOriginal = campo.getStyle();
+             campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+             tfIndice.setOnKeyReleased(event -> {
+                String texto = tfIndice.getText();
+                if (texto.isEmpty()){
+                    campo.setStyle(estiloOriginal);
+                }
+                });
+             return false;
+         }
+        }
+        for (int i = indice-(indice%6); i< (indice+6-(indice%6)); i++) {
+            TextField campo = tableroList.get(i);
+            if((campo.getText().matches(tfIndice.getText())) & (!campo.getText().matches("")) & (i!=indice)){
+                Alert alerta = new Alert(AlertType.WARNING);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Entrada inválida");
+                alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma fila");
+                alerta.showAndWait();
+                String estiloOriginal = campo.getStyle();
+                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                tfIndice.setOnKeyReleased(event -> {
+                    String texto = tfIndice.getText();
+                    if (texto.isEmpty()){
+                        campo.setStyle(estiloOriginal);
+                    }
+                });
+                return false;
+            }
+        }
+        return true;
+    }
     @FXML
     public void generarPista(ActionEvent event) {
         System.out.println("Generando pista...");
