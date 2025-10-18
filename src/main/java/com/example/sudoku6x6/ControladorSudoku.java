@@ -265,11 +265,13 @@ public class ControladorSudoku {
                 alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma fila");
                 alerta.showAndWait();
                 String estiloOriginal = campo.getStyle();
-                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                campo.setStyle("-fx-border-color: blue; -fx-border-width: 2px;");
+                tfIndice.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
                 tfIndice.setOnKeyReleased(event -> {
                     String texto = tfIndice.getText();
                     if (texto.isEmpty()){
                         campo.setStyle(estiloOriginal);
+                        tfIndice.setStyle("");
                     }
                 });
                 return false;
@@ -287,11 +289,13 @@ public class ControladorSudoku {
                 alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma columna");
                 alerta.showAndWait();
                 String estiloOriginal = campo.getStyle();
-                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                campo.setStyle("-fx-border-color: blue; -fx-border-width: 2px;");
+                tfIndice.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
                 tfIndice.setOnKeyReleased(event -> {
                     String texto = tfIndice.getText();
                     if (texto.isEmpty()){
                         campo.setStyle(estiloOriginal);
+                        tfIndice.setStyle("");
                     }
                 });
                 return false;
@@ -309,11 +313,13 @@ public class ControladorSudoku {
                 alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma subcuadricula");
                 alerta.showAndWait();
                 String estiloOriginal = campo.getStyle();
-                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                campo.setStyle("-fx-border-color: blue; -fx-border-width: 2px;");
+                tfIndice.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
                 tfIndice.setOnKeyReleased(event -> {
                     String texto = tfIndice.getText();
                     if (texto.isEmpty()){
                         campo.setStyle(estiloOriginal);
+                        tfIndice.setStyle("");
                     }
                 });
                 return false;
