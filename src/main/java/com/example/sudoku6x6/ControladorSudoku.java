@@ -242,9 +242,8 @@ public class ControladorSudoku {
                 if (!newValue.matches("[1-6]?")) {
                     campoActual.setText(oldValue);
                 }
-
                 if (!newValue.isEmpty() && !validarReglas(i)){
-                    campoActual.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                    System.out.println("Error");
                 }
             });
         }
@@ -258,21 +257,68 @@ public class ControladorSudoku {
         // Validar Fila
         int filaInicio = (indice / TAMANO) * TAMANO;
         for (int i = filaInicio; i < filaInicio + TAMANO; i++) {
-            if (i != indice && tableroList.get(i).getText().equals(valor)) return false;
+            TextField campo =  tableroList.get(i);
+            if (i != indice && tableroList.get(i).getText().equals(valor)){
+                Alert alerta = new Alert(AlertType.WARNING);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Entrada inválida");
+                alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma fila");
+                alerta.showAndWait();
+                String estiloOriginal = campo.getStyle();
+                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                tfIndice.setOnKeyReleased(event -> {
+                    String texto = tfIndice.getText();
+                    if (texto.isEmpty()){
+                        campo.setStyle(estiloOriginal);
+                    }
+                });
+                return false;
+            }
         }
 
         // Validar Columna
         int col = indice % TAMANO;
         for (int i = col; i < TAMANO * TAMANO; i += TAMANO) {
-            if (i != indice && tableroList.get(i).getText().equals(valor)) return false;
+            TextField campo =  tableroList.get(i);
+            if (i != indice && tableroList.get(i).getText().equals(valor)) {
+                Alert alerta = new Alert(AlertType.WARNING);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Entrada inválida");
+                alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma columna");
+                alerta.showAndWait();
+                String estiloOriginal = campo.getStyle();
+                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                tfIndice.setOnKeyReleased(event -> {
+                    String texto = tfIndice.getText();
+                    if (texto.isEmpty()){
+                        campo.setStyle(estiloOriginal);
+                    }
+                });
+                return false;
+            }
         }
 
         // Validar Subcuadrícula
         List<Integer> subcuadricula = identificarSubcuadricula(indice);
         for (Integer idx : subcuadricula) {
-            if (idx != indice && tableroList.get(idx).getText().equals(valor)) return false;
+            TextField campo =  tableroList.get(idx);
+            if (idx != indice && tableroList.get(idx).getText().equals(valor)) {
+                Alert alerta = new Alert(AlertType.WARNING);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Entrada inválida");
+                alerta.setContentText("El número no puede ser ingresado en esta celda porque colinda con otro en la misma subcuadricula");
+                alerta.showAndWait();
+                String estiloOriginal = campo.getStyle();
+                campo.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                tfIndice.setOnKeyReleased(event -> {
+                    String texto = tfIndice.getText();
+                    if (texto.isEmpty()){
+                        campo.setStyle(estiloOriginal);
+                    }
+                });
+                return false;
+            }
         }
-
         return true;
     }
 
